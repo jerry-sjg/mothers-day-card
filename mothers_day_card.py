@@ -69,7 +69,7 @@ class Heart:
 
 def check_music_file():
     """检查音乐文件是否存在，如果不存在则提示用户"""
-    music_file = "周杰伦 - 听妈妈的话.mp3"
+    music_file = "song1.mp3"
     if not os.path.exists(music_file):
         print(f"提示：要播放音乐，请将音乐文件命名为 '{music_file}' 并放在程序同目录下")
         print(f"当前目录: {os.path.dirname(os.path.abspath(__file__))}")
@@ -79,7 +79,7 @@ def check_music_file():
 def play_music():
     """播放音乐的函数"""
     try:
-        pygame.mixer.music.load("周杰伦 - 听妈妈的话.mp3")
+        pygame.mixer.music.load("song1.mp3")
         pygame.mixer.music.set_volume(0.5)  # 设置音量为50%
         pygame.mixer.music.play(-1)  # -1表示循环播放
         return True
@@ -155,14 +155,14 @@ def main():
                     # 计算字体大小，从36逐渐增加到72
                     font_size = 36 + int((intro_timer / 600) * 36)
                     big_font = pygame.font.Font(font_path, font_size) if os.path.exists(font_path) else pygame.font.SysFont("simhei", font_size)
-                    title = big_font.render("《听妈妈的话》", True, DEEP_PINK)
+                    title = big_font.render("母亲节快乐", True, DEEP_PINK)
                     title_rect = title.get_rect(center=(WINDOW_WIDTH//2, WINDOW_HEIGHT//2 - 50))
                     screen.blit(title, title_rect)
                     intro_timer += 1
                 else:
                     # 前奏结束后保持大号字体
                     big_font = pygame.font.Font(font_path, 72) if os.path.exists(font_path) else pygame.font.SysFont("simhei", 72)
-                    title = big_font.render("《听妈妈的话》", True, DEEP_PINK)
+                    title = big_font.render("母亲节快乐", True, DEEP_PINK)
                     title_rect = title.get_rect(center=(WINDOW_WIDTH//2, WINDOW_HEIGHT//2 - 50))
                     screen.blit(title, title_rect)
                     
